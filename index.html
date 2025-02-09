@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Git</title>
+    <link rel="icon" href="Assets\images\Git-Icon-1788C.png">
+</head>
+
+<body>
+    <h1>A Complete Guide To Git</h1>
+
+    <h2>What Is Git?</h2>
+
+    <p>
+        To truly understand Git, we must first ask ourselves the most obvious question, <i>What is Git?</i>
+    </p>
+
+    <p>
+        Git is simply a <strong>version control system</strong> designed to manage and track changes in source code
+        during software development. It was invented by <strong>Linus Torvalds</strong> in 2005 for Linux kernel
+        development and it enabled collaboration, history tracking and efficient workflow management
+    </p>
+
+    <img src="Assets\images\linus-torvalds-creator-of-linux.jpg" alt="Linus Torvalds. Creator of Linux and Git"
+        width="500px" height="300px">
+
+    <figcaption>Linus Torvalds, creator of Linux and Git. <a href="https://en.wikipedia.org/wiki/Linus_Torvalds"
+            target="_blank">Wikipedia Link.</a></figcaption>
+
+    <p>
+        Now, another question arises with this definition. <i>What on earth is a version control system?</i> To answer
+        this in the simplest terms possible: A <strong>version control system</strong> is like a time machine for our
+        files. It helps us:
+    </p>
+
+    <ul>
+        <li>
+            <strong>Track changes</strong> to your work over time (like a supercharged "undo" button).
+        </li>
+
+        <li>
+            <strong>Save snapshots</strong> of your project at different stages (e.g., "version 1," "version 2," etc.).
+        </li>
+
+        <li><strong>Collaborate</strong> with others without overwriting each other's work.</li>
+        <li><strong>Revert</strong> to an older version if you make a mistake.</li>
+    </ul>
+
+    <p>Some <strong>version control system types</strong> alongside Git include:</p>
+
+    <ul>
+        <li>Mercurial (Hg)</li>
+        <li>Bazaar (bzr)</li>
+        <li>Fossil</li>
+    </ul>
+
+    <p>Now that we know what Git is, let's install and start using it!😀</p>
+
+
+    <h2>Installing Git</h2>
+    <p>Before installing Git, we must first confirm if it's already installed on our system or not. To do this, head
+        over to the search bar and type in cmd and press Enter to open up Command Prompt.</p>
+    <img src="Assets\images\Screenshot (77).png" alt="screenshot of cmd typed on searchbar" width="500px">
+    <figcaption>Type cmd on windows searchbar</figcaption>
+
+    <p>Once in the terminal, we'll run the command <i>git -v</i> to check if git is installed on our system.</p>
+
+    <img src="Assets\images\git-v.png" alt="screenshot of command git -v" width="500px">
+    <figcaption>check whether Git is installed</figcaption>
+
+    <p>This command should return Git's version number if already installed. If not, no worries! We'll follow the three
+        simple steps of downloading and installing it below! 😀</p>
+
+    <ol>
+        <li>
+            <p>First, <a href="https://git-scm.com/downloads" target="_blank"> we'll click on this link</a> to head over
+                to Git's download page. This page automatically detects the operating system we're on and will present
+                us with a download button. We'll click on this download button to initiate the download!</p>
+            <img src="Assets\images\download_button.png" alt="screenshot of download git button" width="500px">
+            <figcaption>click on this download button</figcaption>
+        </li>
+
+        <li>
+            <p>Once finally downloaded we'll locate Git in the folder we've downloaded it to and run it to begin
+                installation.</p>
+            <img src="Assets\images\locate git.png" alt="screenshot of Git's file location" width="500px">
+            <figcaption>Locate Git and run it</figcaption>
+        </li>
+
+        <li>
+            <p>We'll Leave the default configurations as they are clicking on next until we see the install button.
+                We'll click on install, wait for it to finish installing, and walla! Git is finally installed on our
+                system and we can start using it! 😀</p>
+            <img src="Assets\images\install-button.png" alt="screenshot of install section in git installer"
+                width="500px">
+            <figcaption>click on istall</figcaption>
+
+            <p><strong>You can run <i>git -v</i> to confirm Git is installed.</strong></p>
+        </li>
+
+    </ol>
+
+
+    <h2>Configuring Git</h2>
+    <p>Now comes the exciting part! We've installed Git and can now start using Git commands on our terminal.</p>
+    <p>To start off, we need <strong>to tell Git who we are by presenting it with our username and email</strong>. To do
+        this, we'll
+        open cmd as demonstrated earlier and run the following two commands:</p>
+    <ul>
+        <li>
+            <p><i>git config --global user.name "Your Name"</i> to present our username.</p>
+        </li>
+        <li>
+            <p><i>git config --global user.email "project.email@example.com"</i> to present our email.</p>
+        </li>
+
+        <img src="Assets\images\username-and-email.png" alt="screenshot of commands to configure username and email"
+            width="500px">
+        <figcaption>configure username and email</figcaption>
+    </ul>
+
+    <p>Next we'll need <strong>to confirm that git received our configured username and email</strong> using the
+        following commands:</p>
+
+    <ul>
+        <li>
+            <p><i>git config user.name</i> to check the username</p>
+        </li>
+        <li>
+            <p><i>git config user.email</i> to check the email</p>
+        </li>
+
+        <img src="Assets\images\check-username-and-email.png" alt="screenshot of commands to chech username and email"
+            width="500px">
+        <figcaption>check configured username and email</figcaption>
+    </ul>
+
+    <p>And that's it! Git now knows who we are! 😀</p>
+
+
+    <h2>Initializing a Git repository</h2>
+    <p>
+        As we learned earlier, Git tracks changes in our files. Therefore, in simple terms <strong>a Git repository is
+            just but
+            a folder whose files and subfolders are being constantly tracked and monitored by Git for changes or
+            updates.</strong>
+        Git also stores the entire history of these changes allowing us to revert to previous stages of the changes
+        history.
+    </p>
+
+    <p>Now you may be wondering <i>How do we get Git to monitor our files?</i> No worries! We'll walk through how to do
+        that in the following steps:</p>
+
+    <ol>
+        <li>
+            <p>We are going to create a folder on our desktop and open it. Simply right click on your desktop select
+                new, then select folder, and open it.</p>
+            <img src="Assets\images\create-new-folder.png" alt="screenshot of creating a new folder" width="500px">
+            <figcaption>create a new folder</figcaption>
+        </li>
+
+        <li>
+            <p>On the address bar we'll clear the address and type cmd then press Enter to open the directory in cmd.
+            </p>
+            <img src="Assets\images\open-directory-on-cmd.png" alt="screenshot opening directory in cmd" width="500px">
+            <figcaption>open new folder directory in cmd</figcaption>
+        </li>
+
+        <li>
+            <p>Once inside cmd we'll run <i>git init</i> command. This <strong>transforms New Folder to a Git
+                    repository.</strong>
+                Congratulations! Git is now tracking your New Folder for changes and updates! 😀</p>
+            <img src="Assets\images\git-init-screenshot.png" alt="screenshot of git init command" width="500px">
+            <figcaption>transform New Folder to a Git repository</figcaption>
+        </li>
+        </ul>
+
+
+        <h2>Commiting changes</h2>
+        <p><strong>Commiting chages in Git is like saving a snapshot of your project.</strong> <i>So why commit?</i>
+            Commiting a change
+            will help us revert to that version anytime, we'll also pass a message explaining what the changes were as
+            this also helps others see our progress and updates.</p>
+
+        <p>To demonstrate this we're going to add 2 simple text documents to our New folder repository, and for each
+            document, we'll pass a commit message that we added a text document following the steps below:</p>
+
+        <ol>
+            <li>
+                <p>Open New Folder and inside it create a new text document. Simply right click, select new then Text
+                    Document. Name this file <i>text-document1</i></p>
+                <img src="Assets\images\create-txt-doc1.png" alt="screenshot of creating text document1" width="500px">
+                <figcaption>create text-document1</figcaption>
+            </li>
+
+            <li>
+                <p>Now that we've made a change to our New Folder repository (added a text document), <strong>we'd like
+                        to
+                        visualize what change we actually made.</strong> To do this open New folder directory in cmd as
+                    demonstrated
+                    earlier and run the command<i> git status</i></p>
+                <p>Git will tell us that the text document we just created is not tracked, hence we need to <strong>add
+                        it to
+                        the staging area and commit it.</strong></p>
+                <img src="Assets\images\git-status.png" alt="screenshot of running git status" width="500px">
+                <figcaption>check for changes on repository</figcaption>
+            </li>
+
+            <li>
+                <p>Before commiting the change however, we need to add the change to the staging area. This saves the
+                    change. To do this, run the command <i>git add .</i> This command <strong>adds all changes to the
+                        staging area</strong>
+                    .</p>
+                <img src="Assets\images\git-add.png" alt="screenshot of running git add ." width="500px">
+                <figcaption>add changes to staging area</figcaption>
+
+                <p>And now on running <i>git status</i> again we see that <i>text-document1</i> has been added to the
+                    staging area.</p>
+                <img src="Assets\images\git-status2.png"
+                    alt="screenshot of running git status command to check if changes have been added to the staging area"
+                    width="500px">
+                <figcaption>check if changes have been added to staging area</figcaption>
+            </li>
+
+            <li>
+                <p>Now finally, we can commit the change and pass the message that we <strong> added
+                        text-document1</strong> using the following command: <i>git commit -m "added text-document1"</i>
+                </p>
+                <p>And that's it your first ever commit! 😀</p>
+                <img src="Assets\images\git-commit.png" alt="screenshot of running git commit command" width="500px">
+                <figcaption>commit change</figcaption>
+            </li>
+
+            <li>
+                <p>For practice, repeat steps 1 to 4 for <i>text-document2</i>.</p>
+            </li>
+
+            <li>
+                <p>Now you should have two commits. One for <i>text-document1</i> and the other for
+                    <i>text-document2</i>.</p>
+                <p>To <strong>view the commits,</strong> simply run the command <i>git log --all</i>, and Git shows you
+                    all the commits
+                    you've made.</p>
+                <img src="Assets\images\git-log.png" alt="screenshot of running git log --all command" width="500px">
+                <figcaption>view commits</figcaption>
+            </li>
+        </ol>
+
+        <p>
+            <strong>
+                Congratulations! You're now almost an expert at Git! 😀
+            </strong>
+        </p>
+
+
+        <h2>Branches</h2>
+
+        <p>The final fundamental concept you'll need to grasp in Git is <strong>Branches.</strong> </p>
+
+        <h3>What is a branch?</h3>
+        <p>A branch in Git is like a parallel workspace. It lets you experiment, add features, or fix bugs
+            <strong>without changing the "main" version</strong> of your project. This main version is often referred to
+            as the <strong>main or master branch</strong></p>
+        <p>In a nutshell:</p>
+        <ul>
+            <li>
+                <strong>Branch = Copy:</strong> Start with the main code, then create your own copy to mess with.
+            </li>
+
+            <li>
+                <strong>Work Safely:</strong> Break things here (it won't affect others until you're ready to merge.)
+            </li>
+
+            <li>
+                <strong>Merge Later:</strong> When your changes work, glue them back to the main branch.
+            </li>
+        </ul>
+
+        <h3>Creating, viewing, switching, merging and deleting branches</h3>
+        <p>To demonstrate how to do all this we'll create 2 new branches on the New Folder repository. We'll then add a
+            text
+            document file to each new branch and call it <i>feature.txt and feature2.txt</i>. Finally, we'll merge one
+            of the new branches to our
+            main branch and delete the other branch in the steps below:</p>
+
+        <ol>
+            <li>
+                <p>On the New Folder directory in cmd we'll run the command <i>git branch new-branch</i> to
+                    <strong>create a
+                        branch</strong> called <strong>new-branch</strong></p>
+                <img src="Assets\images\git-branch.png" alt="screenshot of running git branch branch name command"
+                    width="500px">
+                <figcaption>create a new branch</figcaption>
+            </li>
+
+            <li>
+                <p>To <strong>view all brances present in our repository,</strong> we will simply run the command <i>git
+                        branch</i> and Git shows us all branches present.</p>
+                <img src="Assets\images\git-branch2.png" alt="screenshot of running git branch command" width="500px">
+                <figcaption>view branches present</figcaption>
+            </li>
+
+            <li>
+                <p>For practice create another branch and view it following steps 1 and 2. Call this branch
+                    <i>new-branch2.</i></p>
+            </li>
+
+            <li>
+                <p>Now we'll need to <strong>switch to the new branch</strong> <i>new-branch</i> and create
+                    <i>feature.txt</i> inside this branch by running the command <i>git switch new-branch</i>, and then
+                    heading over to New Folder and creating feature.txt</p>
+                <p>Finally, add and commit these changes as discussed earlier.</p>
+                <img src="Assets\images\git-switch.png" alt="screenshot of running git switch branch name"
+                    width="500px">
+                <figcaption>switch branch</figcaption>
+
+                <img src="Assets\images\create-feature.png" alt="screenshot of feature.txt created." width="500px">
+                <figcaption>create feature.txt</figcaption>
+            </li>
+
+            <li>
+                <p>
+                    For practice, switch to <i>new-branch2</i> and create <i>feature2.txt</i> in this branch.
+                </p>
+
+                <p><strong>Remember to add and commit the changes to new-branch2.</strong></p>
+            </li>
+
+            <li>
+                <p><strong>To merge <i>new-branch</i> to our main or master branch,</strong> we'll first switch back to
+                    our master branch by running the command <i>git switch master</i> and then merge <i>new branch to
+                        master</i> using the command <i>git merge new-branch</i></p>
+
+                <img src="Assets\images\git-merge.png" alt="screenshot of using the git merge command" width="500px">
+                <figcaption>merge new-branch to master</figcaption>
+            </li>
+
+            <li>
+                <p>And now finally we'll learn how to <strong>delete a branch,</strong> by deleting the
+                    <i>new-branch2</i> we created earlier. To do this, simply run the command <i>git branch -D
+                        new-branch2</i></p>
+                <img src="Assets\images\git-D.png" alt="screenshot of using git -D command" width="500px">
+                <figcaption>delete new-branch2</figcaption>
+            </li>
+        </ol>
+
+        <p><strong>And there you go! You can now consider yourself a pro at using Git. Proud of you! 😀</strong></p>
+
+        <h2>Further Learning</h2>
+        <p>The next step in your learning journey would be learning about <strong>GitHub.</strong> GitHub is an online
+            platform where you can upload your repositories to.</p>
+
+        <p><strong>Stay tuned as I plan to release a complete guide to GitHub soon!!</strong></p>
+
+
+        <h2>Ask a Question</h2>
+
+        <form>
+            <label for="question">What is your question?</label>
+            <input type="text" placeholder="Type in your question" id="question">
+            <button>Submit</button>
+        </form>
+
+        <h2>Provide a Tip</h2>
+
+        <form>
+            <label for="tip">What is your tip?</label>
+            <input type="text" placeholder="Type in your tip" id="tip">
+            <button>Submit</button>
+        </form>
+
+
+</body>
+
+</html>
